@@ -4,6 +4,7 @@ class AIPlayer
   end
 
   def request_move(board, character)
-    @strategy.find_best_move(board, character)
+    coords, score = @strategy.find_best_move(board, character)
+    coords
   end
 end
