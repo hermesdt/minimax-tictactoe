@@ -52,6 +52,16 @@ describe Strategies::Minimax do
     expect(best_move).to eq([0, 1])
   end
 
+  it "should return [0,2] as best move" do
+    board = Board.new(cells: [
+      [nil, 'x', nil],
+      [nil, 'x', nil],
+      [nil, nil, 'o']])
+
+    best_move, score = strategy.find_best_move(board, 'o')
+    expect(best_move).to eq([0, 2])
+  end
+
   it "should return [0,0] as best move" do
     board = Board.new(cells: [
       [nil, nil, 'o'],
