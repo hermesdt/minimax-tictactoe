@@ -1,0 +1,2 @@
+describe GameStatus do
+end
