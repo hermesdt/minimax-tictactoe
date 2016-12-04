@@ -14,6 +14,10 @@ class GameStatus
       board.map{|row| row.compact.size}.inject(:+) == board.width ** 2
     end
 
+    def empty?(board)
+      board.map{|row| row.compact.size}.inject(:+) == 0
+    end
+
     def rows_finished?(board)
       result = board.map{|r| r.uniq}.find{|r| r.size == 1 && !r[0].nil?}
       result ? result[0] : nil
