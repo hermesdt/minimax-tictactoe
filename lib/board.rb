@@ -1,21 +1,23 @@
 class Board
-  extend Enumerable
+  include Enumerable
 
   WIDTH = 3
 
-  attr_accessor :cells
+  attr_accessor :cells, :width
 
-  def initialize
-    @cells = (0..WIDTH).to.map{ [[nil] * WIDTH] }.inject(:+)
+  def initialize width: WIDTH
+    @width = width
+    @cells = (0...WIDTH).to_a.map{ [[nil] * WIDTH] }.inject(:+)
   end
 
-  def width
-    WIDTH
-  end
   alias_method :height, :width
 
   def [](index)
     @cells[index]
+  end
+
+  def []=(index, value)
+    @cells[index] = value
   end
 
   def each(&block)
