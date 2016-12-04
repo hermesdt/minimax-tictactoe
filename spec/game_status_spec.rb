@@ -16,7 +16,7 @@ describe GameStatus do
     end
   end
 
-  it "should return true for column one" do
+  it "should return true for diagonal one" do
     board = Board.new(width: 3)
     3.times do |i|
       board.each{|r| r[i] = 'X'}
@@ -25,7 +25,7 @@ describe GameStatus do
     expect(GameStatus.finished?(board)).to be(true)
   end
 
-  it "should return true for column two" do
+  it "should return true for diagonal two" do
     board = Board.new(width: 3)
     3.times do |i|
       board[3 - i - 1][i] = 'X'
