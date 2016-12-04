@@ -36,4 +36,8 @@ class Board
   def dup
     Board.new(width: self.width, cells: self.cells.map{|row| row.dup})
   end
+
+  def to_s
+    "\n" + self.map{ |row| row.map{|e| e || " "}.join("|") }.join("\n") + "\n"
+  end
 end
