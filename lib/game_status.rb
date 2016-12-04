@@ -7,7 +7,11 @@ class GameStatus
     end
 
     def finished?(board)
-      rows_finished?(board) || columns_finished?(board) || diagonals_finished?(board)
+      rows_finished?(board) || columns_finished?(board) || diagonals_finished?(board) || full?(board)
+    end
+
+    def full?(board)
+      board.map{|row| row.compact.size}.inject(:+) == board.width ** 2
     end
 
     def rows_finished?(board)
