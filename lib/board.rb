@@ -1,5 +1,6 @@
 class Board
   include Enumerable
+  CHARACTERS = ['x', 'o']
 
   WIDTH = 3
 
@@ -30,5 +31,9 @@ class Board
         block.call(i,j) if cell.nil?
       end
     end
+  end
+
+  def dup
+    Board.new(width: self.width, cells: self.cells.map{|row| row.dup})
   end
 end
