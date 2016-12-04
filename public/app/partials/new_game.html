@@ -1,0 +1,15 @@
+<div class="row">
+	<div ng-if="finished && !draw" class="alert {{alertType}}">Winner!! {{winner}}</div>
+	<div ng-if="finished && draw" class="alert alert-info">Draw!!</div>
+	<div ng-if="thinking" class="alert alert-warning">Thinking...</div>
+	<div ng-if="!thinking && !finished" class="xs-small-12 alert alert-info">Turn: {{turn}} ({{player_character}})</div>
+	<div class="xs-small-12">
+		<table>
+			<tr class="game-row" ng-repeat="row in rows" ng-init="row_index = $index">
+				<td ng-repeat="cell in row track by $index" ng-init="cell_index = $index">
+					<span class="game-cell" ng-click="makeMovement(row_index, cell_index)">{{cell}}</span>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
