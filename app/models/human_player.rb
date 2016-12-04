@@ -1,5 +1,5 @@
 class HumanPlayer
-  def initialize on_request_move
+  def set_on_request_move on_request_move
     @on_request_move = on_request_move
   end
 
