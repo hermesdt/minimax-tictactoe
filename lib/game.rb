@@ -1,5 +1,4 @@
 class Game
-  CHARACTERS = ['x', 'o']
 
   def initialize board: Board.new
     @board = board
@@ -10,7 +9,7 @@ class Game
   def next_move
     @move += 1
     player = @players[@move % 2]
-    character = CHARACTERS[@move % 2]
+    character = Board::CHARACTERS[@move % 2]
 
     request_move_for(player, character)
   end
