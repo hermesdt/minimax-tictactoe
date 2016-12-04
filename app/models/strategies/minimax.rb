@@ -47,7 +47,7 @@ module Strategies
         end
       else
         if x == 1 && y == 1
-          2
+          5
         else
           0
         end
