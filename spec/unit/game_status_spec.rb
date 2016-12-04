@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe GameStatus do
 
   3.times do |i|

@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe AIPlayer do
   it "should call find_best_move on the strategy" do
     strategy = double(:fake_strategy)

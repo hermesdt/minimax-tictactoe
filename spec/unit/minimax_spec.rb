@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe Strategies::Minimax do
   let(:strategy){ Strategies::Minimax.new }
   it "should return [2,1] as best move" do
